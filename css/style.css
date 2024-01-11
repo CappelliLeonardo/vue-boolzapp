@@ -23,6 +23,12 @@
     background-color: #D6DBD7;
     height: 80%;
 }
+
+.bg-light-blue{
+    background: #8EDAFC;
+}
+
+
 .main-box{
     width: 80%;
     height: 90%;
@@ -30,4 +36,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: lightcoral;
+}
+
+.main-box header{
+    background: green;
+    height: 50px;
+}
+
+.search-button{
+    background-color: white;
+    border:1px solid lightgray;
+    color: gray;
+    width: 10%;
+}
+
+.search-input{
+    width: 90%;
+    border:1px solid lightgray;
 }
