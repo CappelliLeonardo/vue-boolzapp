@@ -26,22 +26,27 @@
 
 .bg-light-blue{
     background: #8EDAFC;
+    height: 60px;
 }
 
 
 .main-box{
     width: 80%;
-    height: 90%;
+    height: 90vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: lightcoral;
+    background: white;
+    border: 1px solid black;
+    
 }
 
 .main-box header{
     background: green;
     height: 50px;
 }
+
+
 
 .search-button{
     background-color: white;
@@ -53,4 +58,20 @@
 .search-input{
     width: 90%;
     border:1px solid lightgray;
+}
+
+.chat-scroll{
+    overflow: auto;
+    min-width: 200px;
+    list-style-type: none;
+    flex-grow: 1;
+}
+
+.main-height{
+    height: calc(100% - 34px);
+}
+
+
+.search-bar{
+    height: 30px;
 }
