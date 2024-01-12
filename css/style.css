@@ -58,10 +58,10 @@
 }
 
 .chat-scroll{
-    overflow: auto;
-    min-width: 200px;
+    
     list-style-type: none;
     flex-grow: 1;
+    
 }
 
 .main-height{
