@@ -33,8 +33,20 @@
             <div class="container main-box position-absolute top-50">
                 <div class="row h-100 ">
                     <div class="col-4  p-0 h-100  ">
-                        <header class="">
-                            QUESTO è l'HEADER
+                        <header class="d-flex align-items-center justify-content-between py-1 ">
+                            <div class=" d-flex align-items-center p-2 ">
+                                <div class="user-img">
+                                    <img src="./img/avatar_io.jpg" alt="">
+                                </div>
+                                <h6>
+                                    Sofia
+                                </h6>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-notch p-2  "></i>
+                                <i class="fa-regular fa-message p-2  "></i>
+                                <i class="fa-solid fa-ellipsis-vertical p-2 "></i>
+                            </div>
                         </header>
 
                         <main class="d-flex flex-column main-height">
@@ -49,7 +61,7 @@
                                     <span class="d-block">
                                         Ricevi notifiche di nuovi messaggi
                                     </span>
-                                    <a href="">Attiva notifiche desktop</a>
+                                    <a href="" class="text-muted">Attiva notifiche desktop</a>
                                 </div>
 
                             </div>
@@ -62,24 +74,110 @@
                                 <input class="search-input" placeholder="Cerca o inizia una nuova chat" type="text">
                             </div>
 
-                            <ul class="chat-scroll bg-success ">
-                                <li>UGO</li>
+                            <ul class="chat-scroll">
+                                <li v-for="(elem) in contacts">
+                                    <div class="d-flex justify-content-between ">
+                                        <div class=" d-flex justify-content-between">
+
+                                            <div class="user-img">
+                                                <img :src="elem.avatar" :alt="elem.name">
+                                            </div>
+                                            
+                                            <div>
+                                                <h6>
+                                                    {{elem.name}}
+                                                </h6>
+                                                <span class="text-muted ">
+                                                    Ultimo messaggio inviato
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted px-1 ">
+                                                12:00
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
                                 
                             </ul>
                             
 
                         </main>
                     </div>
-                    <div class="col-8 p-0">
-                        <header class=""></header>
-                        <main></main>
-                        <footer></footer>
+                    <div class="col-8 p-0 h-100 d-flex flex-column  ">
+                        <header class="d-flex align-items-center justify-content-between py-1 ">
+                            <div class=" d-flex align-items-center p-2">
+                                <div class="user-img">
+                                    <img src="./img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="">
+                                    <h6>
+                                        Michele
+                                    </h6>
+                                    <span class="text-muted ">Ultimo accesso oggi alle 12:00</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass p-2 text-muted "></i>
+                                <i class="fa-solid fa-paperclip p-2 text-muted"></i>
+                                <i class="fa-solid fa-ellipsis-vertical p-2 text-muted"></i>
+                            </div>
+                        </header>
+
+                        <main class="chat-box ">
+                            <div class="row g-0 p-3 justify-content-end">
+                                    <!-- Crea ciclo messaggio stampato in pagina -->
+
+                                <div class="col-auto l-text px-2 sent ">
+                                        {{contacts[0].messages[0].message}}
+                                        <div class="d-flex justify-content-end text-muted">
+                                                {{contacts[0].messages[0].date.split(" ",2)[1]}}
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 p-3 justify-content-end">
+                                <div class="col-auto l-text px-2 sent ">
+                                        {{contacts[0].messages[1].message}}
+                                        <div class="d-flex justify-content-end text-muted">
+                                                {{contacts[0].messages[1].date.split(" ",2)[1]}}
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 p-3 justify-content-start">
+                                <div class="col-auto l-text px-2 received "> 
+                                        {{contacts[0].messages[2].message}}
+                                        <div class="d-flex justify-content-end text-muted">
+                                                {{contacts[0].messages[2].date.split(" ",2)[1]}}
+                                        </div>
+                                </div>
+                            </div>
+
+
+                            
+                        </main>
+
+                        <footer class="footer-chat d-flex align-items-center">
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <button class=" px-2 ">
+                                        <i class="fa-regular fa-face-smile"></i>
+                                    </button>
+                                    <input class="search-input" placeholder="Scrivi un messaggio" type="text">
+                                    <button class="px-2 ">
+                                        <i class="fa-solid fa-microphone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </footer>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
      <!-- Importazione Vue -->
      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -88,3 +186,4 @@
 </body>
 
 </html>
+
