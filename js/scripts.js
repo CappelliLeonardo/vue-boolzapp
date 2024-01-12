@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            clickedContacts : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -169,9 +170,15 @@ createApp({
                 }
             ]
             
-        };
+        }
+        
 
         
+    },
+    methods:{
+        clickedChat(index) {
+            this.clickedContacts = index;
+        }
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');

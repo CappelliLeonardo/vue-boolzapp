@@ -75,7 +75,7 @@
                             </div>
 
                             <ul class="chat-scroll">
-                                <li v-for="(elem) in contacts">
+                                <li v-for="(elem) in contacts" @click = "clickedChat(clickedContacts)">
                                     <div class="d-flex justify-content-between ">
                                         <div class=" d-flex justify-content-between">
 
@@ -125,41 +125,19 @@
                             </div>
                         </header>
 
-                        <main class="chat-box ">
-                            <div class="row g-0 p-3 justify-content-end">
-                                    <!-- Crea ciclo messaggio stampato in pagina -->
-
-                                <div class="col-auto l-text px-2 sent ">
-                                        {{contacts[0].messages[0].message}}
-                                        <div class="d-flex justify-content-end text-muted">
-                                                {{contacts[0].messages[0].date.split(" ",2)[1]}}
-                                        </div>
+                        <main class="chat-box">
+                            <div v-for="(elem,i) in contacts[clickedContacts].messages" :class = "contacts[clickedContacts].messages[i].status == 'sent' ? 'justify-content-end' : 'justify-content-start'" class = "row g-0 p-3">
+                                <!-- Crea ciclo messaggio stampato in pagina -->
+                                <div class="col-auto l-text px-2" :class = "contacts[clickedContacts].messages[i].status == 'sent' ? 'sent' : 'received'">
+                                    {{elem.message}}
+                                    <div class="d-flex text-muted">
+                                        {{elem.date.split(" ",2)[1]}}
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="row g-0 p-3 justify-content-end">
-                                <div class="col-auto l-text px-2 sent ">
-                                        {{contacts[0].messages[1].message}}
-                                        <div class="d-flex justify-content-end text-muted">
-                                                {{contacts[0].messages[1].date.split(" ",2)[1]}}
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="row g-0 p-3 justify-content-start">
-                                <div class="col-auto l-text px-2 received "> 
-                                        {{contacts[0].messages[2].message}}
-                                        <div class="d-flex justify-content-end text-muted">
-                                                {{contacts[0].messages[2].date.split(" ",2)[1]}}
-                                        </div>
-                                </div>
-                            </div>
-
-
-                            
                         </main>
 
-                        <footer class="footer-chat d-flex align-items-center">
+                        <footer class="footer-chat">
                             <div class="row">
                                 <div class="col d-flex">
                                     <button class=" px-2 ">

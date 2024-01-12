@@ -101,10 +101,16 @@
     min-height: 5px;
 }
 
+
 .footer-chat button{
     width: 80px;
     border: none;
     height: 50px;
+}
+
+.active{
+    background: grey;
+    opacity: 1;
 }
 
 /* 
@@ -114,10 +120,12 @@
     background-color:#D5F9BA ;
     border-radius: 5px;
     padding: 5px;
+    justify-content: end;
 }
 
 .received{
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 5px;
+    justify-content: start;
 }
