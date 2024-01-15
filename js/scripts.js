@@ -194,8 +194,20 @@ createApp({
                 this.contacts[this.clickedContacts].messages.push(obj);
                 this.newMessage = '';
 
+                let timeout;
 
+                timeout = setTimeout(() => {
+                    let newMessageAutoObject = {
+                        date: '15:30:34',
+                        message:'Ok!',
+                        status:'received'
+                    };
+
+
+                    this.contacts[this.clickedContacts].messages.push(newMessageAutoObject);
+                }, 1000);
             }
+            
         },
     }
   // Monto l'istanza di Vue in pagina
