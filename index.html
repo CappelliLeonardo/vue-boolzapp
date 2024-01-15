@@ -51,9 +51,9 @@
 
                         <main class="d-flex flex-column main-height">
 
-                            <div class="row bg-light-blue g-0">
+                            <div class="row bg-light-blue g-0 justify-content-start  ">
 
-                                <div class="col-3 icon-bell text-center">
+                                <div class="col-3 icon-bell align-items-center d-flex">
                                     <i class="fa-solid fa-bell-slash fa-2x"></i>
                                 </div>
 
@@ -76,7 +76,7 @@
 
                             <ul class="chat-scroll overflow-scroll">
                                 <li v-for="(elem, i) in contacts" @click = "clickedChat(i)" :class = "(i == clickedContacts) ? 'active' : '' ">
-                                    <div class="d-flex justify-content-between py-3   " v-if=" elem.visible == true ">
+                                    <div class="d-flex justify-content-between py-3 hover" v-if=" elem.visible == true ">
                                         <div class=" d-flex justify-content-between">
 
                                             <div class="user-img">
