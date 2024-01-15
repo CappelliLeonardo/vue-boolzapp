@@ -125,7 +125,7 @@
                             </div>
                         </header>
 
-                        <main class="chat-box">
+                        <main class="chat-box overflow-scroll ">
                             <div v-for="(elem,i) in contacts[clickedContacts].messages" :class = "contacts[clickedContacts].messages[i].status == 'sent' ? 'justify-content-end' : 'justify-content-start'" class = "row g-0 p-3">
                                 <!-- Crea ciclo messaggio stampato in pagina -->
                                 <div class="col-auto l-text px-2" :class = "contacts[clickedContacts].messages[i].status == 'sent' ? 'sent' : 'received'">

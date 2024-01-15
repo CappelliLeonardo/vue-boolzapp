@@ -192,7 +192,7 @@ createApp({
                 }
 
                 this.contacts[this.clickedContacts].messages.push(obj);
-                this.newTodo = '';
+                this.newMessage = '';
 
 
             }

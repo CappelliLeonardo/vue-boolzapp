@@ -58,10 +58,8 @@
 }
 
 .chat-scroll{
-    
     list-style-type: none;
     flex-grow: 1;
-    
 }
 
 .main-height{
@@ -98,7 +96,7 @@
 }
 
 .footer-chat{
-    min-height: 5px;
+    height: 50px;
 }
 
 
