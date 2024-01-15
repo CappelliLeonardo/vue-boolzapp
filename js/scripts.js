@@ -7,6 +7,7 @@ createApp({
         return {
             newMessage: '',
             clickedContacts : 0,
+            userInputText : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -209,6 +210,22 @@ createApp({
             }
             
         },
+
+        searchcontact(){
+            for( let i = 0 ; i < this.contacts.length ; i++){
+
+                let name = this.contacts[i].name.toLowerCase()
+                this.userInputText = this.userInputText.toLowerCase()
+
+                if(name.includes(this.userInputText)){
+                    this.contacts[i].visible = true;
+                }
+                else{
+                    this.contacts[i].visible = false;
+                }
+
+            }
+        }
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');

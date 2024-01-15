@@ -71,12 +71,12 @@
                                 <button class="search-button px-2 ">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
-                                <input class="search-input" placeholder="Cerca o inizia una nuova chat" type="text">
+                                <input class="search-input" v-model="userInputText" @keyup = "searchcontact()" placeholder="Cerca o inizia una nuova chat" type="text">
                             </div>
 
                             <ul class="chat-scroll overflow-scroll">
                                 <li v-for="(elem, i) in contacts" @click = "clickedChat(i)" :class = "(i == clickedContacts) ? 'active' : '' ">
-                                    <div class="d-flex justify-content-between py-3   ">
+                                    <div class="d-flex justify-content-between py-3   " v-if=" elem.visible == true ">
                                         <div class=" d-flex justify-content-between">
 
                                             <div class="user-img">
