@@ -199,12 +199,10 @@ createApp({
 
                 timeout = setTimeout(() => {
                     let newMessageAutoObject = {
-                        date: '15:30:34',
+                        date: '10/01/2020 15:30:44',
                         message:'Ok!',
                         status:'received'
                     };
-
-
                     this.contacts[this.clickedContacts].messages.push(newMessageAutoObject);
                 }, 1000);
             }
@@ -213,7 +211,6 @@ createApp({
 
         searchcontact(){
             for( let i = 0 ; i < this.contacts.length ; i++){
-
                 let name = this.contacts[i].name.toLowerCase()
                 this.userInputText = this.userInputText.toLowerCase()
 
@@ -223,7 +220,6 @@ createApp({
                 else{
                     this.contacts[i].visible = false;
                 }
-
             }
         }
     }
